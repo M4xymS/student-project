@@ -1,17 +1,23 @@
-<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-  <div class="container">
-      <a class="navbar-brand">Angular Router</a>
-      <ul class="nav navbar-nav" routerLinkActive="active">
-          <li class="nav-item"><a class="nav-link" routerLink="/mainPage">mainPage</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="/sequentialSearch">sequentialSearch</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="/hashSearch">hashSearch</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="/binaryTreeSearch">binaryTreeSearch</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="/knuthSearch">knuthSearch</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="/boyerSearch">boyerSearch</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="/rabinSearch">rabinSearch</a></li>
-      </ul>
-  </div>
-</nav>
 
-
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
 <router-outlet></router-outlet>
