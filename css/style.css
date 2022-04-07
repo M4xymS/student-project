@@ -1,6 +1,3 @@
-body {
-  overflow: hidden;
-}
 .form-control::-moz-placeholder {
   color: #dddddd;
   opacity: 1;
@@ -742,9 +739,6 @@ fieldset[disabled] .btn-warning.active {
 }
 
 @media (min-width: 768px) {
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
   .navbar-form {
     margin-top: 21px;
     margin-bottom: 21px;
@@ -1005,9 +999,6 @@ fieldset[disabled] .btn-warning.active {
 }
 
 @media (min-width: 219px) {
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
   .main .template .form-group {
     width: auto;
   }
@@ -1021,9 +1012,6 @@ fieldset[disabled] .btn-warning.active {
   }
 }
 @media (min-width: 991px) {
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
   .main .template .form-group {
     width: 190px;
   }
@@ -1033,9 +1021,6 @@ fieldset[disabled] .btn-warning.active {
   }
 }
 @media (min-width: 1200px) {
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
   .main .template .form-group {
     width: 250px;
   }
