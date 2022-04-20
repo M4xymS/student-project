@@ -1,0 +1,23 @@
+{
+    "data":[
+        {
+            "keys": [
+                "rośliny duże",
+                "rośliny",
+                "tropikalne",
+                "duże nasłonecznienie"
+            ],
+            "value": "link do czegoś 1"
+        },
+        {
+            "keys": [
+                "rośliny małe",
+                "rośliny",
+                "zimujące",
+                "zacienienie",
+                "wymagające"
+            ],
+            "value": "link do czegoś 2"
+        }
+    ]
+}
