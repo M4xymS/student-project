@@ -15,6 +15,9 @@
   opacity: 1;
 }
 /*     General overwrite     */
+* {
+  overflow: hidden;
+}
 a {
   color: #2c93ff;
 }
@@ -1028,9 +1031,6 @@ fieldset[disabled] .btn-warning.active {
     width: 250px;
   }
 }
-
-/*          For demo purpose         */
-
 .fixed-plugin {
   position: fixed;
   top: 0px;
