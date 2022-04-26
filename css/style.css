@@ -15,7 +15,7 @@
   opacity: 1;
 }
 /*     General overwrite     */
-* {
+body {
   overflow: hidden;
 }
 a {
