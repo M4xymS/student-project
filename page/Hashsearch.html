@@ -20,6 +20,28 @@
   <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
   <!--     Awesome Icons    -->
   <script src="https://kit.fontawesome.com/4872d83a22.js" crossorigin="anonymous"></script>
+  <script>
+    function funkcja(){
+        let query = document.getElementById("q").value;
+        let url = `http://[::1]:3000?q=${query}`;
+        url = `https://hash-searching.herokuapp.com/?q=${query}`;
+
+        fetch(url)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                if(res.error)document.getElementById("error").innerHTML = res.error;
+                else document.getElementById("error").innerHTML = "";
+                document.getElementById("time").innerHTML = res.time;
+                document.getElementById("hashTime").innerHTML = res.hashTime;
+                document.getElementById("query").innerHTML = res.query;
+                document.getElementById("result").innerHTML = "";
+                for(const el of res.result){
+                    document.getElementById("result").innerHTML += `<div class="result">${el}</div`
+                }
+            })
+    }
+</script>
 </head>
 
 <body>
@@ -93,12 +115,19 @@
               <form class="form-inline animate__animated animate__backInUp animate__delay-1s" role="form">
                 <div class="form-group">
                   <label class="sr-only" for="Inputtemplate2">Enter the search terms</label>
-                  <input type="text" class="form-control transparent" placeholder="Terms...">
+      
+                  <input type="text" class="form-control transparent" placeholder="Szukaj" id="q">
+                  <button type="button" class="btn btn-warning btn-fill" onclick="funkcja()">Search</button>
                 </div>
-                <button type="submit" class="btn btn-warning btn-fill" onclick="hashTable()">Search</button>
               </form>
-
             </div>
+          </div>
+          <div class="row">
+            <span id="error" style="color: red;"></span><br>
+             time: <span id="time"></span>ms<br>
+              hash time: <span id="hashTime"></span>ms<br>
+               query: <span id="query"></span><br><br>
+            <div id="result"></div>
           </div>
         </div>
       </div>
