@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>test</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<script>
+class RabinKarpSearch {
+    constructor(stringToSearch, keyword) {
+        this.stringToSearch = stringToSearch;
+        this.keyword = keyword;
+    }
+}
+const hashCalculation = function (stringToHashCalculation, alphabetSize, primeNumber) { //kalkulacja hasha wykorzystywująca schemat hornera
+    let hash = 0;
+    for (let i = 0; i < stringToHashCalculation.length; i++) {
+        hash = ((hash * alphabetSize) + stringToHashCalculation.charCodeAt(i)) % primeNumber;
+    }
+    return hash;
+};
+const arrayShiftCalculation = function (length, alphabetSize, primeNumber) { // kalkulacja liczby o którą będzie przesuwane okno, działa podobnie do kalkulacji hasha
+    let shift = 0;
+    for (let i = 0; i < length; i++) {
+        shift = ((shift * alphabetSize) % primeNumber);
+    }
+    return shift;
+};
+RabinKarpSearch.searchText = function (stringToSearch, keyword) {
+  const primeNumber=9551;
+  const alphabetSize=256;
+  let stringPositions = [];	//tablica z pozycjami i długością wyszukiwanego wyrazu
+  let keywordHash = hashCalculation(keyword, alphabetSize, primeNumber); // kalkulacja hasha dla wyszukiwanego wyrazu
+  let stringToSearchHash = hashCalculation(stringToSearch, alphabetSize, primeNumber); //kalkulacja hasha dla przeszukiwanego ciągu
+  let arrayShift = arrayShiftCalculation(keyword.length, alphabetSize, primeNumber);
+	for (let i = 0; i < stringToSearch.length - keyword.length; i++){
+		if (keywordHash = stringToSearchHash){
+			let j;
+			for (j = 0; j < keyword.length; j++) if (stringToSearch[i+j] != keyword[j]) break; // mechanizm ponownego sprawdzenia ciągu tekstu eliminujący błędne ciągi z tym samym hashem
+			if (j == keyword.length) stringPositions.push([i, keyword.length]);	
+		}
+		if(i < stringToSearch.length - keyword.length){
+			stringToSearchHash = (alphabetSize * (stringToSearchHash - (stringToSearch.charCodeAt(i) * arrayShift)) + (stringToSearch.charCodeAt(i + keyword.length))) % primeNumber;
+			if(stringToSearchHash < 0) stringToSearchHash += primeNumber; // mechanizm przesuwania okna i liczenia hasha z poprzedniego ciągu
+		}
+	}
+	return stringPositions;
+  
+};
+
+console.log("Znalezione:", RabinKarpSearch.searchText("testakwjbdjbawdubjawdojubawdtestadlknkwadntestadwk", "test")); //test działania
+
+</script>
+</body>
+</html>
