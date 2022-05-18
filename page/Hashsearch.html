@@ -18,30 +18,9 @@
   <!--     Fonts     -->
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
-  <!--     Awesome Icons    -->
+  <!--     Awesome Icons, Search Engines    -->
   <script src="https://kit.fontawesome.com/4872d83a22.js" crossorigin="anonymous"></script>
-  <script>
-    function funkcja(){
-        let query = document.getElementById("q").value;
-        let url = `http://[::1]:3000?q=${query}`;
-        url = `https://hash-searching.herokuapp.com/?q=${query}`;
-
-        fetch(url)
-            .then(res => res.json())
-            .then(res => {
-                console.log(res);
-                if(res.error)document.getElementById("error").innerHTML = res.error;
-                else document.getElementById("error").innerHTML = "";
-                document.getElementById("time").innerHTML = res.time;
-                document.getElementById("hashTime").innerHTML = res.hashTime;
-                document.getElementById("query").innerHTML = res.query;
-                document.getElementById("result").innerHTML = "";
-                for(const el of res.result){
-                    document.getElementById("result").innerHTML += `<div class="result">${el}</div`
-                }
-            })
-    }
-</script>
+  <script src="/js/searchs/hashsearch/searchengine.js"></script>
 </head>
 
 <body>
@@ -122,12 +101,10 @@
               </form>
             </div>
           </div>
-          <div class="row">
-            <span id="error" style="color: red;"></span><br>
-             time: <span id="time"></span>ms<br>
-              hash time: <span id="hashTime"></span>ms<br>
-               query: <span id="query"></span><br><br>
-            <div id="result"></div>
+          <div class="box row">
+            <span id="error" style="color: red;"></span>
+               query: <span id="query"></span>
+            <div id="result">rfeaf fraef era fear fea </div>
           </div>
         </div>
       </div>
