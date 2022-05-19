@@ -1,5 +1,6 @@
 function funkcja() {
-  let query = document.getElementById("q").value;
+  let query = document.querySelector("#q").value;
+  const btn = document.querySelector(".btn");
   let url = `http://[::1]:3000?q=${query}`;
   url = `https://hash-searching.herokuapp.com/?q=${query}`;
 
@@ -7,13 +8,19 @@ function funkcja() {
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
-      if (res.error) document.getElementById("error").innerHTML = res.error;
-      else document.getElementById("error").innerHTML = "";
-      document.getElementById("query").innerHTML = res.query;
+      if (res.error)
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Brak wyników!",
+        });
+      else document.getElementById("query").innerHTML = res.query;
       document.getElementById("result").innerHTML = "";
       for (const el of res.result) {
-        document.getElementById("result").innerHTML += `${el}`;
+        document.getElementById("result").innerHTML += `${el} `;
       }
     });
-  preventdefault();
 }
+
+//document.getElementById("error").innerHTML = res.error;
+//document.getElementById("error").innerHTML = "";

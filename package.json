@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "sweetalert2": "^11.4.14",
     "typed.js": "^2.0.12",
     "typewriter-effect": "^2.18.2"
   }
