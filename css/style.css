@@ -686,7 +686,12 @@ fieldset[disabled] .btn-warning.active {
   border: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
-
+.navbar-collapse {
+  overflow-x: hidden;
+}
+#bs-example-navbar-collapse-1 {
+  overflow: hidden;
+}
 .navbar .label {
   background-color: #ffffff;
   border: 1px solid #dddddd;
