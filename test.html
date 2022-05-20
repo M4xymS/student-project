@@ -5,24 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
-    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script src="node_modules/requirejs/require.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
 </head>
 <body>
     hejka
+    <input type="text" name="" id="txt" placeholder="Tekst">
     <button class="btn">dotknij</button>
-
+    
     <script>
         const btn = document.querySelector('.btn');
-        btn.addEventListener('click', () => {
-            Swal.fire({
-  title: 'Error!',
-  text: 'Do you want to continue',
-  icon: 'error',
-  confirmButtonText: 'Cool'
-})
-        });
+//         btn.addEventListener('click', () => {
+//             Swal.fire({
+//   title: 'Error!',
+//   text: 'Do you want to continue',
+//   icon: 'error',
+//   confirmButtonText: 'Cool'
+// })
+//         });
+
+
+
+btn.addEventListener('click', textinbox);
+function textinbox(){
+    let text = document.querySelector('#txt').value;
+        Swal.fire({
+            title: 'Hej!',
+            text: text,
+            icon: 'success'
+});
+
+
+};
+
     </script>
 
 
