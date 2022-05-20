@@ -19,14 +19,9 @@ function funkcja() {
       else
         for (const el of res.result)
           Swal.fire({
-            icon: "success",
+            icon: `success`,
             title: `Sukces, wyniki zapytania ${query} to:`,
             text: `${res.result} `,
           });
     });
 }
-
-// else document.getElementById("query").innerHTML = res.query;
-// document.getElementById("result").innerHTML = "";
-// for (const el of res.result) {
-//   document.getElementById("result").innerHTML += `${el} `;

@@ -36,7 +36,8 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-
+test.css
+test.html
 # System files
 .DS_Store
 Thumbs.db
