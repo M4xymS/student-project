@@ -4,7 +4,7 @@ function funkcjaboyer() {
   const query = document.querySelector("#q").value;
 
   let url = `http://[::1]:3000?q=${query}`;
-  url = `https://binary-search.herokuapp.com/?q=${query}`;
+  url = `https://https://boyer-moore.herokuapp.com/?q=${query}`;
 
   fetch(url)
     .then((res) => res.json())
