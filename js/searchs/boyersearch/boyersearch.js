@@ -10,18 +10,18 @@ function funkcjaboyer() {
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
-      if (res.results == 0)
+      if (res.result == 0)
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: "Brak wyników!",
         });
       else
-        for (const el of res.results)
+        for (const el of res.result)
           Swal.fire({
             icon: `success`,
             title: `Sukces, wyniki zapytania ${query} to:`,
-            text: `${res.results} `,
+            text: `${res.result} `,
           });
     });
 }
