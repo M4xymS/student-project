@@ -15,7 +15,7 @@ function funkcjahash() {
           icon: "error",
           title: "Oops...",
           text: "Brak wyników!",
-          footer: `Czas wyszukiwania to: <b>${res.time}</b>ms`,
+          footer: `Czas wyszukiwania to: <b>${res.hashTime}</b>ms`,
         });
       else
         for (const el of res.result)
@@ -23,7 +23,7 @@ function funkcjahash() {
             icon: `success`,
             title: `Sukces, wyniki zapytania ${query} to:`,
             text: `${res.result} `,
-            footer: `Czas wyszukiwania to: <b>${res.time}</b>ms`,
+            footer: `Czas wyszukiwania to: <b>${res.hashTime}</b>ms`,
           });
     });
 }
