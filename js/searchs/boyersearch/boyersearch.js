@@ -15,6 +15,7 @@ function funkcjaboyer() {
           icon: "error",
           title: "Oops...",
           text: "Brak wyników!",
+          footer: `Czas wyszukiwania to: <b>${res.time}</b>`,
         });
       else
         for (const el of res.results)
@@ -22,6 +23,7 @@ function funkcjaboyer() {
             icon: `success`,
             title: `Sukces, wyniki zapytania ${query} to:`,
             text: `${res.results} `,
+            footer: `Czas wyszukiwania to: <b>${res.time}</b>`,
           });
     });
 }
